@@ -1,0 +1,67 @@
+<IfModule mod_rewrite.c>
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+
+    # =========================================
+    # FORCE HTTPS
+    # =========================================
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+
+    # =========================================
+    # FORCE WWW
+    # =========================================
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+    # =========================================
+    # ROOT PAGE
+    # FIRST CHECK index.html
+    # =========================================
+    RewriteCond %{DOCUMENT_ROOT}/index.html -f
+    RewriteRule ^$ index.html [L]
+
+
+    # =========================================
+    # IF index.html NOT FOUND
+    # OPEN index.php
+    # =========================================
+    RewriteCond %{DOCUMENT_ROOT}/index.html !-f
+    RewriteRule ^$ index.php [L]
+
+
+    # =========================================
+    # AUTHORIZATION HEADER
+    # =========================================
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+
+    # =========================================
+    # REMOVE TRAILING SLASH
+    # =========================================
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+
+    # =========================================
+    # EXISTING FILE/FOLDER DIRECT ACCESS
+    # =========================================
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+
+    # =========================================
+    # LARAVEL FRONT CONTROLLER
+    # =========================================
+    RewriteRule ^ index.php [L]
+
+</IfModule>

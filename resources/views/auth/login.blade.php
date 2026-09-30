@@ -1,5 +1,5 @@
 <style>
-        .btn-success {
+    .btn-success {
         --vz-btn-color: #fff;
 
         --vz-btn-bg: #0b2d5c !important;
@@ -11,17 +11,18 @@
         --vz-btn-focus-shadow-rgb: 126, 189, 136;
         /*--vz-btn-active-color: #fff;*/
         /*--vz-btn-active-bg: #528e5c;*/
-        --vz-btn-active-border-color: ##0b2d5c;
+        --vz-btn-active-border-color: #0b2d5c;
         --vz-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
         --vz-btn-disabled-color: #fff;
         --vz-btn-disabled-bg: #0b2d5c;
-        --vz-btn-disabled-border-color: ##0b2d5c;
+        --vz-btn-disabled-border-color: #0b2d5c;
     }
-.btn:hover {
-    color: #fff;
-    background-color: #49a942 !important;
-    border-color: #49a942 !important;
-}
+
+    .btn:hover {
+        color: #fff;
+        background-color: #49a942 !important;
+        border-color: #49a942 !important;
+    }
 </style>
 @extends('auth.layouts.app')
 

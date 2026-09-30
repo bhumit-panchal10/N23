@@ -50,7 +50,7 @@ Route::get('thank-you', [FrontController::class, 'thankyou'])->name('thankyou');
 Route::get('service/{slugname?}', [FrontController::class, 'service'])->name('service');
 Route::get('photogallery', [FrontController::class, 'photogallery'])->name('photogallery');
 Route::get('videogallery', [FrontController::class, 'videogallery'])->name('videogallery');
-Route::get('service-detail/{slugname?}', [FrontController::class, 'servicedetail'])->name('servicedetail');
+Route::get('service-detail/{slugname?}', [FrontController::class, 'servicedetail'])->name('service.details');
 Route::get('blog-detail/{slugname?}', [FrontController::class, 'blog_detail'])->name('blogdetail');
 
 Route::get('login', fn() => redirect()->route('admin.login'))->name('login');

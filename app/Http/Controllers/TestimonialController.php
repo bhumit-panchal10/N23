@@ -136,7 +136,7 @@ class TestimonialController extends Controller
     public function delete(Request $request)
     {
         try {
-            $testimonial = Testimonial::where('isDelete', 0)->findOrFail($request->id);
+            $testimonial = Testimonial::findOrFail($request->id);
 
             $imagePath = FolderPath('/uploads/testimonial') . '/' . $testimonial->photo;
 

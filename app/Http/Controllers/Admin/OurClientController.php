@@ -207,7 +207,7 @@ class OurClientController extends Controller
                 */
                 if (!empty($ourClient->image)) {
 
-                   $oldImage = FolderPath('our-client') . '/' . $ourClient->image;
+                    $oldImage = FolderPath('our-client') . '/' . $ourClient->image;
 
                     if (File::exists($oldImage)) {
 
@@ -279,7 +279,6 @@ class OurClientController extends Controller
     public function destroy($id)
     {
         try {
-
             $ourClient = OurClient::where(
                 'id',
                 $id
@@ -364,7 +363,7 @@ class OurClientController extends Controller
                 */
                 if (!empty($ourClient->image)) {
 
-                   $imagePath = FolderPath('our-client') . '/' . $ourClient->image;
+                    $imagePath = FolderPath('our-client') . '/' . $ourClient->image;
 
                     if (File::exists($imagePath)) {
 

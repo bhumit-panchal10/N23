@@ -514,6 +514,53 @@
                 }
             );
 
+            /*
+                       |--------------------------------------------------------------------------
+                       | Single Delete
+                       |--------------------------------------------------------------------------
+                       */
+            $('.deleteClientBtn').on('click', function() {
+
+                alert(id);
+                let id = $(this).data('id');
+                if (!confirm('Are you sure you want to delete this client?')) {
+                    return;
+                }
+
+                let deleteUrl = "{{ route('admin.our-clients.destroy', ':id') }}";
+                deleteUrl = deleteUrl.replace(':id', id);
+
+                $.ajax({
+                    url: deleteUrl,
+                    type: 'DELETE',
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+
+                    success: function(response) {
+
+                        console.log(response);
+
+                        if (response.status === true) {
+                            alert(response.message);
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                        }
+
+                    },
+
+                    error: function(xhr) {
+
+                        console.log('Status:', xhr.status);
+                        console.log('Response:', xhr.responseText);
+
+                        alert('Something went wrong while deleting the client.');
+                    }
+                });
+
+            });
+
 
             /*
             |--------------------------------------------------------------------------
@@ -551,92 +598,6 @@
 
                 }
             );
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Single Delete
-            |--------------------------------------------------------------------------
-            */
-            $('.deleteClientBtn').on(
-                'click',
-                function() {
-
-                    let id =
-                        $(this).data('id');
-
-
-                    if (
-                        !confirm(
-                            'Are you sure you want to delete this client?'
-                        )
-                    ) {
-
-                        return false;
-
-                    }
-
-
-                    let deleteUrl =
-                        "{{ route('admin.our-clients.destroy', ':id') }}";
-
-
-                    deleteUrl =
-                        deleteUrl.replace(
-                            ':id',
-                            id
-                        );
-
-
-                    $.ajax({
-
-                        url: deleteUrl,
-
-                        type: 'POST',
-
-                        data: {
-
-                            _token: "{{ csrf_token() }}",
-
-                            _method: 'DELETE'
-
-                        },
-
-                        success: function(response) {
-
-                            if (
-                                response.status === true
-                            ) {
-
-                                alert(
-                                    response.message
-                                );
-
-                                window.location.reload();
-
-                            } else {
-
-                                alert(
-                                    response.message
-                                );
-
-                            }
-
-                        },
-
-                        error: function() {
-
-                            alert(
-                                'Something went wrong while deleting the client.'
-                            );
-
-                        }
-
-                    });
-
-                }
-            );
-
 
             /*
             |--------------------------------------------------------------------------

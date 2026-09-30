@@ -18,8 +18,8 @@
 
                             <h4 class="mb-sm-0">
                                 Service FAQ
-                                @if (!empty($service->title))
-                                    - {{ $service->title }}
+                                @if (!empty($service->name))
+                                    - {{ $service->name }}
                                 @endif
                             </h4>
 

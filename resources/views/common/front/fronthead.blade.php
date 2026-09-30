@@ -1,28 +1,26 @@
 <head>
     @yield('opTag')
-    <!-- =========================
-         BASIC META
-    ========================== -->
+
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {{-- <meta name="description" content="Jay Mahakal Enterprise Group - Engineering, Procurement and Construction Solutions">
-
-    <meta name="keywords"
-        content="JME Group, Jay Mahakal Enterprise Group, Engineering, EPC, Piping, Electrical, Fire Protection, Passive Network"> --}}
-
     <meta name="author" content="Jay Mahakal Enterprise Group">
-
-    <!-- =========================
-         TITLE
-    ========================== -->
 
     <title>
         @yield('title')
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- =========================
          FAVICON

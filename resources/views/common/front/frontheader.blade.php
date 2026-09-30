@@ -1,255 +1,346 @@
-<style>
-    .jme-menu > li > a.active {
-    color: #59b947;
-    font-weight: 700;
-}
+ <div class="n23-topbar">
+     <div class="container">
+         <div class="n23-topbar-inner">
+             <!-- Left Tagline -->
+             <div class="n23-topbar-tagline">
+                 <span class="n23-tagline-icon">
+                     <i class="bi bi-airplane"></i>
+                 </span>
+                 <span>Your Journey,</span>
+                 <strong>Our Priority</strong>
+             </div>
+             <!-- Right Side -->
+             <div class="n23-topbar-right">
+                 <!-- Phone -->
+                 <a href="tel:+919974304894" class="n23-topbar-contact">
+                     <span class="n23-contact-icon">
+                         <i class="bi bi-telephone"></i>
+                     </span>
+                     <span class="n23-contact-text">
+                         +91 99743 04894
+                     </span>
+                 </a>
+                 <span class="n23-topbar-divider"></span>
+                 <!-- Email -->
+                 <a href="mailto:n23travelservices@gmail.com" class="n23-topbar-contact">
+                     <span class="n23-contact-icon">
+                         <i class="bi bi-envelope"></i>
+                     </span>
+                     <span class="n23-contact-text">
+                         n23travelservices@gmail.com
+                     </span>
+                 </a>
+                 <span class="n23-topbar-divider d-none d-lg-block"></span>
+                 <!-- Social -->
+                 <div class="n23-topbar-social d-none d-lg-flex">
+                     <a href="#" aria-label="Instagram">
+                         <i class="bi bi-instagram"></i>
+                     </a>
+                     <a href="#" aria-label="Facebook">
+                         <i class="bi bi-facebook"></i>
+                     </a>
+                     <a href="#" aria-label="LinkedIn">
+                         <i class="bi bi-linkedin"></i>
+                     </a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- =====================================================
+     N23 HEADER
+===================================================== -->
+ <header class="n23-header" id="n23Header">
+     <div class="container">
+         <div class="n23-header-inner">
+             <!-- =========================================
+                 LOGO
+            ========================================== -->
+             <a href="#" class="n23-header-logo" aria-label="N23 Travel Service">
+                 <span class="n23-logo-crop">
+                     <img src="{{ asset('front/images/logo.png') }}" alt="N23 Travel Service">
+                 </span>
+             </a>
+             <!-- =========================================
+                 DESKTOP NAVIGATION
+            ========================================== -->
+             <nav class="n23-navigation">
+                 <ul class="n23-nav-list">
+                     <li class="n23-nav-item">
+                         <a href="{{ route('index') }}"
+                             class="n23-nav-link {{ request()->routeIs('index') ? 'active' : '' }}">
+                             <span>Home</span>
+                         </a>
+                     </li>
+                     <li class="n23-nav-item">
+                         <a href="{{ route('about') }}"
+                             class="n23-nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
+                             <span>About Us</span>
+                         </a>
+                     </li>
+                     <!-- =================================
+                         SERVICES
+                    ================================== -->
+                     <li class="n23-nav-item n23-service-dropdown">
+                         <button type="button"
+                             class="n23-nav-link n23-service-trigger {{ request()->routeIs('service.details') ? 'active' : '' }}"
+                             aria-expanded="false">
+                             <span>Services</span>
+                             <i class="bi bi-chevron-down"></i>
+                         </button>
+
+                         <div class="n23-dropdown-menu">
+
+                             <div class="n23-mega-left">
+
+                                 <div class="n23-mega-flight-path"></div>
+
+                                 <i class="bi bi-airplane-fill n23-mega-plane"></i>
+
+                                 <span class="n23-mega-kicker">
+                                     Explore N23
+                                 </span>
+
+                                 <h3>
+                                     Travel
+                                     <span>Services</span>
+                                 </h3>
+
+                                 <div class="n23-mega-title-line"></div>
+
+                                 <p>
+                                     Everything you need for a smoother,
+                                     smarter and stress-free journey.
+                                 </p>
+
+
+
+                             </div>
+
+                             <div class="n23-dropdown-links">
+                                 @php
+                                     $services = \App\Models\Service::orderBy('sequence', 'asc')->get();
+                                 @endphp
+                                 @foreach ($services as $service)
+                                     <div class="n23-dropdown-link">
+
+                                         <div class="n23-dropdown-image">
+                                             <img src="{{ asset('services/' . $service->image) }}" alt="Visa Services">
+                                         </div>
+
+                                         <div class="n23-dropdown-name">
+
+                                             <a href="{{ route('service.details', $service->slugname) }}">
+                                                 {{ $service->name ?? '' }}
+                                             </a>
+
+                                             <span class="n23-service-line"></span>
+
+                                             <small>
+                                                 {{ Str::limit($service->short_description, 79) }}
+                                             </small>
+
+                                         </div>
+
+                                     </div>
+                                 @endforeach
+                             </div>
+
+                         </div>
+                     </li>
+                     <li class="n23-nav-item">
+                         <a href="{{ route('blog') }}"
+                             class="n23-nav-link {{ request()->routeIs('blog*') ? 'active' : '' }}">
+                             <span>Blog</span>
+                         </a>
+                     </li>
+                 </ul>
+             </nav>
+             <!-- =========================================
+                 RIGHT
+            ========================================== -->
+             <div class="n23-header-actions">
+                 <div class="n23-contact-mask-btn">
+                     <!-- Back layer -->
+                     <span class="n23-contact-mask-label">
+                         Contact Us
+                         <i class="bi bi-arrow-up-right"></i>
+                     </span>
+                     <!-- Front animated mask layer -->
+                     <a href="{{ route('contactus') }}" class="n23-contact-mask-link">
+                         Contact Us
+                         <i class="bi bi-arrow-up-right"></i>
+                     </a>
+                 </div>
+                 <!-- Mobile Toggle -->
+                 <button type="button" class="n23-mobile-toggle" id="n23MobileToggle" aria-label="Open menu">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                 </button>
+             </div>
+         </div>
+         <!-- =========================================
+             MOBILE NAVIGATION
+        ========================================== -->
+         <div class="n23-mobile-menu" id="n23MobileMenu">
+             <a href="{{ route('index') }}" class="n23-mobile-link active">
+                 Home
+             </a>
+             <a href="{{ route('about') }}" class="n23-mobile-link">
+                 About Us
+             </a>
+             <!-- ==========================================================
+     MOBILE SERVICES DROPDOWN
+========================================================== -->
+             <div class="n23-mobile-services">
 
-.jme-menu > li > a.active::before {
-    opacity: 1;
-    visibility: visible;
-}
+                 <button type="button" class="n23-mobile-service-trigger" id="n23MobileServiceTrigger">
 
+                     <span>Services</span>
 
-/* Dropdown active item */
-.jme-dropdown li a.active {
-    color: #59b947;
-    background: rgba(89, 185, 71, 0.08);
-}
+                     <i class="bi bi-plus-lg"></i>
 
+                 </button>
 
-/* Contact active */
-.jme-btn.active {
-    background: #59b947;
-    color: #fff;
-}
-</style>
-<div class="jme-topbar">
 
-    <div class="jme-container">
+                 <div class="n23-mobile-service-menu">
 
-        <div class="topbar-inner">
+                     <!-- 1. Visas -->
+                     <a href="#" class="n23-mobile-service-link">
 
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-passport"></i>
+                         </span>
 
-            <!-- LEFT -->
+                         <span class="n23-mobile-service-name">
+                             Visas
+                         </span>
 
-            <div class="topbar-left">
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
+                     </a>
 
-                <!-- EMAIL -->
 
-                <a href="mailto:enquiry@jaymahakalenterprisegroup.com" class="topbar-item">
+                     <!-- 2. Domestic & International Packages -->
+                     <a href="#" class="n23-mobile-service-link">
 
-                    <span class="topbar-icon">
-                        ✉
-                    </span>
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-globe2"></i>
+                         </span>
 
-                    <span>
-                        enquiry@jaymahakalenterprisegroup.com
-                    </span>
+                         <span class="n23-mobile-service-name">
+                             Domestic & International Packages
+                         </span>
 
-                </a>
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
+                     </a>
 
-                <!-- PHONE -->
 
-                <a href="tel:+919714123111" class="topbar-item">
+                     <!-- 3. Air Tickets -->
+                     <a href="#" class="n23-mobile-service-link">
 
-                    <span class="topbar-icon">
-                        ☎
-                    </span>
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-airplane"></i>
+                         </span>
 
-                    <span>
-                        +91 97141 23111
-                    </span>
+                         <span class="n23-mobile-service-name">
+                             Air Tickets
+                         </span>
 
-                </a>
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
-            </div>
+                     </a>
 
 
+                     <!-- 4. MICE -->
+                     <a href="#" class="n23-mobile-service-link">
 
-            <!-- RIGHT -->
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-people"></i>
+                         </span>
 
-            <div class="topbar-right">
+                         <span class="n23-mobile-service-name">
+                             MICE
+                         </span>
 
-                <span>
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
-                    Engineering
+                     </a>
 
-                    •
 
-                    <strong>
-                        Procurement
-                    </strong>
+                     <!-- 5. Corporate Events -->
+                     <a href="#" class="n23-mobile-service-link">
 
-                    •
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-calendar-event"></i>
+                         </span>
 
-                    Construction
+                         <span class="n23-mobile-service-name">
+                             Corporate Events
+                         </span>
 
-                </span>
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
-            </div>
+                     </a>
 
 
-        </div>
+                     <!-- 6. Forex -->
+                     <a href="#" class="n23-mobile-service-link">
 
-    </div>
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-currency-exchange"></i>
+                         </span>
 
-</div>
-<header class="jme-header" id="jmeHeader">
+                         <span class="n23-mobile-service-name">
+                             Forex
+                         </span>
 
-    <div class="jme-container">
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
-        <div class="header-inner">
-            <a href="{{route('index')}}" class="jme-logo" aria-label="JME Group Home">
+                     </a>
 
-                <img src="{{ asset('front/images/logo.png') }}" alt="Jay Mahakal Enterprise Group Logo">
 
-            </a>
-            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu"
-                aria-expanded="false">
+                     <!-- 7. Travel Insurance -->
+                     <a href="#" class="n23-mobile-service-link">
 
-                <span></span>
+                         <span class="n23-mobile-service-icon">
+                             <i class="bi bi-shield-check"></i>
+                         </span>
 
-                <span></span>
+                         <span class="n23-mobile-service-name">
+                             Travel Insurance
+                         </span>
 
-                <span></span>
+                         <span class="n23-mobile-service-arrow">
+                             <i class="bi bi-arrow-up-right"></i>
+                         </span>
 
-            </button>
+                     </a>
 
-            <nav class="jme-navigation" id="jmeNavigation">
+                 </div>
 
-              <ul class="jme-menu">
-
-        {{-- HOME --}}
-        <li>
-            <a href="{{ route('index') }}"
-                class="{{ request()->routeIs('index') ? 'active' : '' }}">
-                Home
-            </a>
-        </li>
-
-
-        {{-- ABOUT --}}
-        <li>
-            <a href="{{ route('about') }}"
-                class="{{ request()->routeIs('about') ? 'active' : '' }}">
-                About
-            </a>
-        </li>
-
-
-        {{-- CATEGORY --}}
-        <li class="has-dropdown service-menu">
-            <a href="#"
-                class="dropdown-toggle
-                {{ request()->is('service/*') || request()->routeIs('servicedetail') ? 'active' : '' }}">
-            
-                <span>Category</span>
-                <span class="dropdown-arrow"></span>
-            
-            </a>
-
-            @php
-                $categories = \App\Models\Category::orderBy('id', 'asc')->get();
-            @endphp
-
-            <ul class="jme-dropdown service-dropdown">
-
-                @foreach ($categories as $category)
-                    <li>
-                        <a href="{{ url('service/' . $category->slugname) }}"
-                            class="{{ request()->is('service/' . $category->slugname) ? 'active' : '' }}">
-
-                            <span class="service-dropdown-name">
-                                {{ $category->name }}
-                            </span>
-
-                        </a>
-                    </li>
-                @endforeach
-
-            </ul>
-
-        </li>
-
-
-        {{-- GALLERY --}}
-        <li class="has-dropdown">
-
-            <a href="#"
-                class="dropdown-toggle {{ request()->routeIs('photogallery', 'videogallery') ? 'active' : '' }}">
-
-                <span>Gallery</span>
-
-                <span class="dropdown-arrow"></span>
-            </a>
-
-            <ul class="jme-dropdown">
-
-                <li>
-                    <a href="{{ route('photogallery') }}"
-                        class="{{ request()->routeIs('photogallery') ? 'active' : '' }}">
-                        Photo Gallery
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{ route('videogallery') }}"
-                        class="{{ request()->routeIs('videogallery') ? 'active' : '' }}">
-                        Video Gallery
-                    </a>
-                </li>
-
-            </ul>
-
-        </li>
-
-
-        {{-- BLOG --}}
-        <li>
-            <a href="{{ route('blog') }}"
-               class="{{ request()->routeIs('blog', 'blogdetail') ? 'active' : '' }}">
-                Blog
-            </a>
-        </li>
-
-    </ul>
-
-
-            {{-- CONTACT --}}
-            <a href="{{ route('contactus') }}"
-            class="jme-btn">
-        
-                <span class="jme-btn-text">
-                    Contact Us
-                </span>
-        
-                <span class="jme-btn-icon">
-        
-                    <svg viewBox="0 0 24 24"
-                        width="18"
-                        height="18"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true">
-        
-                        <path d="M5 12h14"></path>
-                        <path d="M13 6l6 6-6 6"></path>
-        
-                    </svg>
-        
-                </span>
-        
-            </a>
-
-           </nav>
-
-        </div>
-
-    </div>
-
-</header>
+             </div>
+             <a href="#" class="n23-mobile-link">
+                 Blog
+             </a>
+             <a href="#" class="n23-mobile-contact">
+                 Contact Us
+                 <i class="bi bi-arrow-up-right"></i>
+             </a>
+         </div>
+     </div>
+ </header>

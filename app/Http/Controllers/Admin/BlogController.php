@@ -55,11 +55,6 @@ class BlogController extends Controller
     {
         $request->validate(
             [
-                'category_id' => [
-                    'required',
-                    'exists:categories,id'
-                ],
-
                 'image' => [
                     'nullable',
                     'image',
@@ -69,19 +64,6 @@ class BlogController extends Controller
 
                 'service_id' => [
                     'required',
-
-                    Rule::exists(
-                        'services',
-                        'id'
-                    )->where(
-                        function ($query) use ($request) {
-
-                            $query->where(
-                                'category_id',
-                                $request->category_id
-                            );
-                        }
-                    ),
                 ],
 
                 'image.image' =>
@@ -126,12 +108,6 @@ class BlogController extends Controller
                 ],
             ],
             [
-                'category_id.required' =>
-                'Category is required.',
-
-                'category_id.exists' =>
-                'Selected category is invalid.',
-
                 'service_id.required' =>
                 'Service is required.',
 
@@ -152,10 +128,6 @@ class BlogController extends Controller
         try {
 
             $blog = new Blog();
-
-            $blog->category_id =
-                $request->category_id;
-
             $blog->service_id =
                 $request->service_id;
 

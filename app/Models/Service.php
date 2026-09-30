@@ -22,6 +22,7 @@ class Service extends Model
         'body',
         'short_description',
         'brief_description',
+        'sequence'
     ];
 
 

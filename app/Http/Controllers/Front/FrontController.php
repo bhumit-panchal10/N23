@@ -13,6 +13,7 @@ use App\Models\VideoGallery;
 use App\Models\PhotoGallery;
 use App\Models\Inquiry;
 use App\Models\MetaData;
+use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -30,16 +31,13 @@ class FrontController extends Controller
     {
         try {
             $meta = MetaData::where('id', '=', '1')->first();
-            $categories = Category::with('services')
-                ->orderBy('id', 'asc')
-                ->take(5)
+            $Services = Service::orderBy('sequence', 'asc')
                 ->get();
-            $blogs = Blog::with('category')
-                ->orderBy('id', 'desc')
+            $Testimonial = Testimonial::get();
+            $blogs = Blog::orderBy('id', 'desc')
                 ->take(3)
                 ->get();
-            $ourclients = OurClient::get();
-            return view('frontview.index', compact('categories', 'blogs', 'ourclients', 'meta'));
+            return view('frontview.index', compact('meta', 'Services', 'Testimonial', 'blogs'));
         } catch (\Throwable $th) {
             Log::error('Home Page Error: ' . $th->getMessage(), [
                 'exception' => $th
@@ -178,10 +176,9 @@ class FrontController extends Controller
     public function contact_us_store(Request $request)
     {
         // try {
-
         $request->validate(
             [
-                'full_name' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
                 'email' => 'required|email',
                 'mobile' => 'required',
                 'subject' => 'required|string|max:255',
@@ -193,11 +190,10 @@ class FrontController extends Controller
             ]
         );
         $data = array(
-            'name' => $request->full_name,
+            'name' => $request->name,
             'email' => $request->email,
             'mobile' => $request->mobile,
             'comment' => $request->message,
-            "strIp" => $request->ip(),
             "created_at" => now()
         );
         Inquiry::create($data);

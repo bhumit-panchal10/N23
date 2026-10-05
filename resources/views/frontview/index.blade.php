@@ -21,8 +21,8 @@
 @endsection
 @section('content')
     <!-- ==========================================================
-                                                                                                                                                                                                                N23 HERO SLIDER
-                                                                                                                                                                                                            ========================================================== -->
+                                                                                                                                                                                                                                                                        N23 HERO SLIDER
+                                                                                                                                                                                                                                                                    ========================================================== -->
     <section class="n23-hero">
 
         <div class="swiper n23HeroSwiper">
@@ -30,8 +30,8 @@
             <div class="swiper-wrapper">
 
                 <!-- ==========================================
-                                                                                                                                                                                                                         SLIDE 01
-                                                                                                                                                                                                                    =========================================== -->
+                                                                                                                                                                                                                                                                                 SLIDE 01
+                                                                                                                                                                                                                                                                            =========================================== -->
                 <div class="swiper-slide n23-hero-slide">
 
                     <div class="n23-hero-bg" style="background-image: url('front/images/hero/hero-1.jpg');">
@@ -71,9 +71,6 @@
                                     </span>
 
                                 </a>
-
-
-
                             </div>
 
                         </div>
@@ -84,8 +81,8 @@
 
 
                 <!-- ==========================================
-                                                                                                                                                                                                                         SLIDE 02
-                                                                                                                                                                                                                    =========================================== -->
+                                                                                                                                                                                                                                                                                 SLIDE 02
+                                                                                                                                                                                                                                                                            =========================================== -->
                 <div class="swiper-slide n23-hero-slide">
 
                     <div class="n23-hero-bg" style="background-image: url('front/images/hero/hero-2.jpg');">
@@ -138,8 +135,8 @@
 
 
                 <!-- ==========================================
-                                                                                                                                                                                                                         SLIDE 03
-                                                                                                                                                                                                                    =========================================== -->
+                                                                                                                                                                                                                                                                                 SLIDE 03
+                                                                                                                                                                                                                                                                            =========================================== -->
                 <div class="swiper-slide n23-hero-slide">
 
                     <div class="n23-hero-bg" style="background-image: url('front/images/hero/hero-3.jpg');">
@@ -194,8 +191,8 @@
 
 
             <!-- ==========================================
-                                                                                                                                                                                                                     SIDE CONTROLS
-                                                                                                                                                                                                                =========================================== -->
+                                                                                                                                                                                                                                                                             SIDE CONTROLS
+                                                                                                                                                                                                                                                                        =========================================== -->
 
             <div class="n23-hero-controls">
                 <div class="n23-hero-pagination"></div>
@@ -256,8 +253,8 @@
 
 
             <!-- =========================
-                                                                                                                                                                                                             FIRST ROW - 4
-                                                                                                                                                                                                        ========================== -->
+                                                                                                                                                                                                                                                                     FIRST ROW - 4
+                                                                                                                                                                                                                                                                ========================== -->
             <div class="n23-services-final-row n23-services-final-row-four">
 
                 @foreach ($Services->take(4) as $service)
@@ -275,7 +272,7 @@
                                 <h3>{{ $service->name }}</h3>
 
                                 <p>{{ Str::limit($service->short_description, 79) }}</p>
-                                <a href="{{ route('service.details', $service->slugname) }}" class="n23-service-final-btn">
+                                <a href="{{ route('service', $service->slugname) }}" class="n23-service-final-btn">
 
                                     <span>Explore</span>
 
@@ -334,15 +331,15 @@
     </section>
 
     <!-- ==========================================================
-                                                                                                                                                                                                             N23 ABOUT US
-                                                                                                                                                                                                        ========================================================== -->
+                                                                                                                                                                                                                                                                     N23 ABOUT US
+                                                                                                                                                                                                                                                                ========================================================== -->
     <section class="n23-about section-space">
         <div class="container">
             <div class="row align-items-center g-lg-5 g-4">
 
                 <!-- ==========================================
-                                                                                                                                                                                                                         LEFT VISUAL
-                                                                                                                                                                                                                    =========================================== -->
+                                                                                                                                                                                                                                                                                 LEFT VISUAL
+                                                                                                                                                                                                                                                                            =========================================== -->
                 <div class="col-lg-6">
                     <div class="n23-about-visual" data-aos="fade-right" data-aos-duration="1000">
 
@@ -388,10 +385,6 @@
                     </div>
                 </div>
 
-
-                <!-- ==========================================
-                                                                                                                                                                                                                         RIGHT CONTENT
-                                                                                                                                                                                                                    =========================================== -->
                 <div class="col-lg-6">
                     <div class="n23-about-content" data-aos="fade-left" data-aos-duration="1000">
 
@@ -444,51 +437,26 @@
         </div>
     </section>
 
-
-
-    <!-- ==========================================================
-                                                                                                                                                                                                             N23 TESTIMONIAL SECTION
-                                                                                                                                                                                                        ========================================================== -->
     <section class="n23-testimonials section-space">
-
         <div class="container">
-
-            <!-- ==========================================
-                                                                                                                                                                                                                     HEADING
-                                                                                                                                                                                                                =========================================== -->
             <div class="n23-testimonial-heading text-center" data-aos="fade-up">
-
                 <span class="n23-testimonial-kicker">
                     Client Testimonials
                 </span>
-
                 <h2>
                     Clients Love
                     <span>N23</span>
                 </h2>
-
             </div>
 
-
-            <!-- ==========================================
-                                                                                                                                                                                                                     SLIDER AREA
-                                                                                                                                                                                                                =========================================== -->
             <div class="n23-testimonial-slider-wrap" data-aos="fade-up" data-aos-delay="150">
-
                 <!-- Previous -->
                 <button class="n23-testimonial-prev" aria-label="Previous testimonial">
-
                     <i class="bi bi-chevron-left"></i>
-
                 </button>
 
-
                 <div class="swiper n23TestimonialSwiper">
-
                     <div class="swiper-wrapper">
-
-
-
                         @foreach ($Testimonial as $testi)
                             <div class="swiper-slide">
                                 <div class="n23-testimonial-slide">
@@ -538,51 +506,28 @@
                             </div>
                         @endforeach
                     </div>
-
                 </div>
-
-
                 <!-- Next -->
                 <button class="n23-testimonial-next" aria-label="Next testimonial">
-
                     <i class="bi bi-chevron-right"></i>
-
                 </button>
-
             </div>
-
-
-            <!-- pagination -->
-            <!-- <div class="n23-testimonial-pagination"></div> -->
-
         </div>
-
     </section>
 
-    <!-- ==========================================================
-                                                                                                                                                                                                                N23 LATEST BLOG SECTION
-                                                                                                                                                                                                            ========================================================== -->
+
     <section class="n23-blog section-space">
-
         <div class="container">
-
-            <!-- ==========================================
-                                                                                                                                                                                                                     SECTION HEADING
-                                                                                                                                                                                                                =========================================== -->
             <div class="n23-blog-heading text-center" data-aos="fade-up">
-
                 <span class="n23-blog-kicker">
                     Latest Blogs
                 </span>
-
                 <h2 class="n23-blog-title">
                     Travel Tips, Stories &
                     <span>Latest Insights</span>
                 </h2>
             </div>
-
             <div class="row g-4">
-
                 <!-- BLOG 01 -->
                 @foreach ($blogs as $blog)
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -603,7 +548,7 @@
                             <div class="n23-blog-content">
 
                                 <h3>
-                                    <a href="{{ route('blogdetail') }}">
+                                    <a href="{{ route('blogdetail', $blog->slugname) }}">
                                         {{ $blog->name }}
                                     </a>
                                 </h3>
@@ -612,7 +557,7 @@
                                     {{ Str::limit(strip_tags($blog->description), 100) }}
                                 </p>
 
-                                <a href="{{ route('blogdetail') }}" class="n23-blog-btn">
+                                <a href="{{ route('blogdetail', $blog->slugname) }}" class="n23-blog-btn">
                                     <span>Read More</span>
                                     <i class="bi bi-arrow-up-right"></i>
                                 </a>
@@ -623,11 +568,8 @@
 
                     </div>
                 @endforeach
-
             </div>
-
         </div>
-
     </section>
 
 @endsection

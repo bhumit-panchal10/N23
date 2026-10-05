@@ -1,3 +1,322 @@
+/* ==========================================================
+   N23 FAQ ACCORDION
+   IMPORTANT:
+   Keep this at the TOP of main.js
+========================================================== */
+
+(function () {
+
+    function n23InitFAQ() {
+
+        const faqContainer =
+            document.querySelector(".n23-service-faq");
+
+        /* FAQ section does not exist on this page */
+        if (!faqContainer) {
+            return;
+        }
+
+
+        const faqItems =
+            faqContainer.querySelectorAll(".n23-faq-item");
+
+
+        if (!faqItems.length) {
+            return;
+        }
+
+
+        /* ==================================================
+           DEFAULT STATE
+           FIRST FAQ OPEN
+        ================================================== */
+
+        faqItems.forEach(function (item, index) {
+
+            const icon =
+                item.querySelector(".n23-faq-toggle i");
+
+            const button =
+                item.querySelector(".n23-faq-question");
+
+
+            if (index === 0) {
+
+                item.classList.add("active");
+
+                if (icon) {
+                    icon.className = "bi bi-dash";
+                }
+
+                if (button) {
+                    button.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+                }
+
+            } else {
+
+                item.classList.remove("active");
+
+                if (icon) {
+                    icon.className = "bi bi-plus";
+                }
+
+                if (button) {
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+
+            }
+
+        });
+
+
+        /* ==================================================
+           ONE EVENT LISTENER
+        ================================================== */
+
+        faqContainer.addEventListener(
+            "click",
+            function (event) {
+
+                const button =
+                    event.target.closest(
+                        ".n23-faq-question"
+                    );
+
+
+                if (!button) {
+                    return;
+                }
+
+
+                const clickedItem =
+                    button.closest(
+                        ".n23-faq-item"
+                    );
+
+
+                if (!clickedItem) {
+                    return;
+                }
+
+
+                /* ==========================================
+                   PREVENT BUTTON DEFAULT
+                ========================================== */
+
+                event.preventDefault();
+
+
+                /* ==========================================
+                   IF ALREADY OPEN
+                   KEEP IT OPEN
+                ========================================== */
+
+                if (
+                    clickedItem.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                /* ==========================================
+                   CLOSE EVERY FAQ
+                ========================================== */
+
+                faqItems.forEach(function (item) {
+
+                    item.classList.remove("active");
+
+
+                    const itemIcon =
+                        item.querySelector(
+                            ".n23-faq-toggle i"
+                        );
+
+
+                    const itemButton =
+                        item.querySelector(
+                            ".n23-faq-question"
+                        );
+
+
+                    if (itemIcon) {
+
+                        itemIcon.className =
+                            "bi bi-plus";
+
+                    }
+
+
+                    if (itemButton) {
+
+                        itemButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                });
+
+
+                /* ==========================================
+                   OPEN CLICKED FAQ
+                ========================================== */
+
+                clickedItem.classList.add("active");
+
+
+                const clickedIcon =
+                    clickedItem.querySelector(
+                        ".n23-faq-toggle i"
+                    );
+
+
+                if (clickedIcon) {
+
+                    clickedIcon.className =
+                        "bi bi-dash";
+
+                }
+
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ======================================================
+       INITIALIZE IMMEDIATELY
+
+       Your main.js is loaded at the bottom of the page,
+       so the FAQ HTML already exists.
+    ====================================================== */
+
+    n23InitFAQ();
+
+})();
+
+
+/* =========================================
+   N23 SERVICE DETAIL TESTIMONIAL SLIDER
+========================================= */
+
+function initN23ServiceDetailTestimonial() {
+
+    const slider =
+        document.querySelector(
+            ".n23-service-detail-testimonial-slider"
+        );
+
+    if (!slider) {
+        return;
+    }
+
+
+    new Swiper(
+        ".n23-service-detail-testimonial-slider",
+        {
+
+            slidesPerView: 3,
+
+            spaceBetween: 25,
+
+            speed: 800,
+
+            loop: true,
+
+            autoplay: {
+
+                delay: 4500,
+
+                disableOnInteraction: false,
+
+                pauseOnMouseEnter: true
+
+            },
+
+            pagination: {
+
+                el:
+                    ".n23-service-detail-testimonial-pagination",
+
+                clickable: true
+
+            },
+
+            breakpoints: {
+
+                0: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 18
+
+                },
+
+                576: {
+
+                    slidesPerView: 1,
+
+                    spaceBetween: 20
+
+                },
+
+                768: {
+
+                    slidesPerView: 2,
+
+                    spaceBetween: 22
+
+                },
+
+                1100: {
+
+                    slidesPerView: 3,
+
+                    spaceBetween: 25
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+if (document.readyState === "loading") {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initN23ServiceDetailTestimonial,
+        { once: true }
+    );
+
+} else {
+
+    initN23ServiceDetailTestimonial();
+
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     /* ==========================================================
        AOS ANIMATION

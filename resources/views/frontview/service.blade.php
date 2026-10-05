@@ -20,256 +20,503 @@
 @endsection
 @section('content')
 
-    <section class="jme-inner-hero">
+    <!-- ==========================================================
+                                                                                                                                                                N23 INNER BREADCRUMB
+                                                                                                                                                            ========================================================== -->
 
-        <!-- Dark overlay -->
-        <div class="jme-inner-overlay"></div>
+    <section class="n23-breadcrumb">
 
+        <div class="n23-breadcrumb-overlay"></div>
 
 
         <div class="container">
-            <div class="jme-inner-content">
-                <div class="jme-inner-card">
 
-                    <div class="jme-card-tag">
-                        <span class="tag-shape"></span>
-                        <span>JME GROUP</span>
-                    </div>
+            <div class="n23-breadcrumb-content">
 
-                    <h1>Service</h1>
 
-                    <!-- Breadcrumb -->
-                    <div class="jme-custom-breadcrumb">
+                <h1>
+                    Visas
+                </h1>
 
-                        <a href="{{ route('index') }}" class="jme-home-link">
 
-                            <span class="jme-home-box">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M3 11.5L12 4l9 7.5"></path>
-                                    <path d="M5.5 10.5V20h13v-9.5"></path>
-                                    <path d="M9.5 20v-6h5v6"></path>
-                                </svg>
-                            </span>
+                <div class="n23-breadcrumb-nav">
 
-                            <span>Home</span>
+                    <a href="{{ route('index') }}">
+                        Home
+                    </a>
 
-                        </a>
+                    <span>
+                        /
+                    </span>
 
-                        <span class="jme-breadcrumb-arrow">
-                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 18l6-6-6-6"></path>
-                            </svg>
-                        </span>
-
-                        <span class="jme-current-page">
-                            <span class="current-dot"></span>
-                            {{ $Category->name ?? '' }}
-                        </span>
-
-                    </div>
-
-                    <!-- Bottom card detail -->
-                    <div class="jme-card-bottom">
-
-                        <span class="small-green-line"></span>
-
-                        <span>PEOPLE</span>
-                        <i></i>
-
-                        <span>PROJECTS</span>
-                        <i></i>
-
-                        <span>PROGRESS</span>
-
-                    </div>
-
-                    <span class="card-green-corner"></span>
+                    <strong>
+                        Visas
+                    </strong>
 
                 </div>
+
+
             </div>
+
         </div>
-        <div class="jme-bottom-strip">
 
-            <span class="bottom-green-shape"></span>
 
-            <div class="jme-bottom-strip-text">
-                <span>ENGINEERING</span>
-                <i></i>
-                <span>PROCUREMENT</span>
-                <i></i>
-                <span>CONSTRUCTION</span>
+    </section>
+
+    <!-- =========================================
+                                                                                                                                                         SERVICE INTRO SECTION
+                                                                                                                                                    ========================================= -->
+
+    <section class="n23-service-intro">
+
+        <div class="container">
+
+            <div class="n23-service-intro-wrapper">
+
+
+                <!-- =========================
+                                                                                                                                                                     LEFT IMAGE
+                                                                                                                                                                ========================== -->
+
+                <div class="n23-service-intro-image" data-aos="fade-right" data-aos-duration="1000">
+
+                    <div class="n23-service-intro-image-shape">
+
+                        <img src="{{ asset('services/' . $Services->image) }}" alt="Tourist Visa Service">
+
+                    </div>
+
+                    <div class="n23-service-intro-image-accent"></div>
+
+                </div>
+
+
+
+                <!-- =========================
+                                                                                                                                                                     RIGHT CONTENT
+                                                                                                                                                                ========================== -->
+
+                <div class="n23-service-intro-content" data-aos="fade-left" data-aos-duration="1000">
+
+                    <h1>
+                        <strong>{{ $Services->name ?? '' }}</strong>
+                    </h1>
+
+
+                    <div class="n23-service-intro-line"></div>
+
+
+                    <p>
+                        {!! $Services->short_description ?? '' !!}
+                    </p>
+
+                </div>
+
+
             </div>
 
         </div>
 
     </section>
 
-    <main class="jme-services-page">
+    <!-- =========================================
+                                                                                                                                                         N23 SERVICE CTA
+                                                                                                                                                    ========================================= -->
 
-        <section class="jme-services-listing">
+    <section class="n23-service-cta">
+        <div class="n23-service-cta-bg"></div>
+        <div class="container">
 
-            <div class="jme-services-container">
+            <div class="n23-service-cta-wrapper" data-aos="fade-up" data-aos-duration="1000">
 
-                <div class="jme-services-grid" id="jmeServicesGrid">
+                <div class="n23-service-cta-content">
 
-                    @forelse ($Services as $service)
-                        <article class="jme-service-card" data-category="{{ $service->category->slugname ?? '' }}"
-                            data-title="{{ $service->name }}">
+                    <span class="n23-service-cta-label">
+                        TRAVEL SUPPORT MADE SIMPLE
+                    </span>
 
-                            <a href="{{ url('service-detail/' . $service->slugname) }}" class="jme-service-image">
+                    <h2>
+                        LET N23
+                        <strong>HANDLE THE JOURNEY.</strong>
+                    </h2>
 
-                                @if ($service->image)
-                                    <img src="{{ asset('services/' . $service->image) }}" alt="{{ $service->name }}">
-                                @else
-                                    <img src="{{ asset('assets/images/noimage.jpg') }}" alt="{{ $service->name }}">
-                                @endif
+                    <p>
+                        From planning and documentation to bookings and
+                        travel assistance, we make every step simple,
+                        smooth and stress-free.
+                    </p>
 
-                            </a>
+                    <a href="{{ route('contactus') }}" class="n23-service-cta-button">
 
-                            <div class="jme-service-content">
+                        <span>
+                            Talk To N23
+                        </span>
 
-                                <h3>
-                                    <a href="{{ url('service-detail/' . $service->slugname) }}">
-                                        {{ $service->name }}
-                                    </a>
-                                </h3>
+                        <span class="n23-service-cta-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
 
-                                <p>
-                                    {{ \Illuminate\Support\Str::limit(strip_tags($service->short_description), 140) }}
-                                </p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+                                                                                                                                                            N23 FAQ SECTION
+                                                                                                                                                        ========================================= -->
+    @if ($faqs->isNotEmpty())
+        <section class="n23-service-faq">
+
+            <div class="container">
+
+                <div class="n23-service-faq-wrapper">
+                    <!-- =================================
+                                                                                                                                                                        LEFT CONTENT
+                                                                                                                                                                    ================================= -->
+
+                    <div class="n23-service-faq-left" data-aos="fade-right" data-aos-duration="1000">
+
+                        <span class="n23-service-faq-label">
+                            FAQS
+                        </span>
+
+                        <h2>
+                            FREQUENTLY
+                            <br>
+                            ASKED
+                            <br>
+                            <strong>QUESTIONS</strong>
+                        </h2>
+
+                        <div class="n23-service-faq-line"></div>
+
+                        <div class="n23-service-faq-image">
+
+                            <img src="{{ asset('front/images/service-faq.jpg') }}" alt="Travel Assistance">
+
+                        </div>
+
+                    </div>
 
 
-                                <a href="{{ url('service-detail/' . $service->slugname) }}" class="jme-service-read-btn">
 
-                                    <span class="jme-service-read-text">
-                                        Read More
+                    <!-- =================================
+                                                                                                                                                                     RIGHT ACCORDION
+                                                                                                                                                                ================================= -->
+
+                    <div class="n23-service-faq-right" data-aos="fade-left" data-aos-duration="1000">
+
+
+                        <!-- =================================
+                                                                                                                                                                         FAQ 1
+                                                                                                                                                                    ================================= -->
+                        @foreach ($faqs as $key => $faq)
+                            <div class="n23-faq-item {{ $key === 0 ? 'active' : '' }}">
+
+                                <button type="button" class="n23-faq-question" aria-expanded="true">
+
+                                    <span>
+                                        {{ $faq->question ?? '' }}
                                     </span>
 
-                                    <span class="jme-service-read-arrow">
-
-                                        <svg viewBox="0 0 24 24">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M13 6l6 6-6 6"></path>
-                                        </svg>
-
+                                    <span class="n23-faq-toggle">
+                                        <i class="bi bi-dash"></i>
                                     </span>
 
-                                </a>
+                                </button>
+
+                                <div class="n23-faq-answer">
+
+                                    <div>
+
+                                        <p>
+                                            {{ $faq->answer ?? '' }}
+                                        </p>
+
+                                    </div>
+
+                                </div>
 
                             </div>
+                        @endforeach
 
-                        </article>
-
-                    @empty
-
-                        <div class="jme-services-no-result">
-                            No services found.
-                        </div>
-                    @endforelse
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
+    @endif
+    <!-- =========================================
+                                                                                                                                                            N23 SERVICE DETAIL DESCRIPTION
+                                                                                                                                                        ========================================= -->
 
+    <section class="n23-service-description">
 
-        @if ($Services->hasPages())
+        <div class="container">
 
-            <div class="jme-service-pagination-wrap">
+            <div class="n23-service-description-inner">
 
-                {{-- RESULT INFO --}}
-                <div class="jme-pagination-info">
+                <div class="n23-service-description-content">
+                    <p>
+                        {!! $Services->brief_description ?? '' !!}
+                    </p>
+                </div>
 
-                    Showing
+            </div>
 
-                    <strong>
-                        {{ $Services->firstItem() ?? 0 }}
-                    </strong>
+        </div>
 
-                    –
+    </section>
 
-                    <strong>
-                        {{ $Services->lastItem() ?? 0 }}
-                    </strong>
+    <!-- =========================================
+                                                                                                                                                            N23 SERVICE DETAIL TESTIMONIAL
+                                                                                                                                                        ========================================= -->
+    @if ($testimonials->isNotEmpty())
+        <section class="n23-service-detail-testimonial">
 
-                    of
+            <div class="container">
 
-                    <strong>
-                        {{ $Services->total() }}
-                    </strong>
+                <!-- SECTION HEADING -->
 
-                    Services
+                <div class="n23-service-detail-testimonial-heading" data-aos="fade-up" data-aos-duration="900">
+
+                    <span class="n23-service-detail-testimonial-label">
+                        CLIENT STORIES
+                    </span>
+
+                    <h2>
+                        WHAT OUR
+                        <strong>CLIENTS SAY</strong>
+                    </h2>
 
                 </div>
 
 
-                {{-- PAGINATION --}}
-                <div class="jme-service-pagination">
+                <!-- TESTIMONIAL SLIDER -->
 
-                    {{-- PREVIOUS --}}
-                    @if ($Services->onFirstPage())
-                        <button type="button" class="jme-pagination-control jme-pagination-prev" disabled>
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 12H5"></path>
-                                <path d="M11 18l-6-6 6-6"></path>
-                            </svg>
-                        </button>
-                    @else
-                        <a href="{{ $Services->previousPageUrl() }}" class="jme-pagination-control jme-pagination-prev">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 12H5"></path>
-                                <path d="M11 18l-6-6 6-6"></path>
-                            </svg>
-                        </a>
-                    @endif
+                <div class="swiper n23-service-detail-testimonial-slider" data-aos="fade-up" data-aos-duration="1100">
+
+                    <div class="swiper-wrapper">
+                        @foreach ($testimonials as $testimonial)
+                            <!-- TESTIMONIAL 1 -->
+
+                            <div class="swiper-slide">
+
+                                <div class="n23-service-detail-testimonial-card">
+
+                                    <div class="n23-service-detail-testimonial-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
 
 
-                    {{-- PAGE NUMBERS --}}
-                    <div class="jme-pagination-numbers">
+                                    <div class="n23-service-detail-testimonial-profile">
 
-                        @foreach ($Services->links()->elements[0] ?? [] as $page => $url)
-                            <a href="{{ $url }}"
-                                class="jme-pagination-page
-                            {{ $page == $Services->currentPage() ? 'active' : '' }}">
-                                {{ $page }}
-                            </a>
+                                        <div class="n23-service-detail-testimonial-image-ring">
+
+                                            <div class="n23-service-detail-testimonial-image">
+
+                                                <img src="{{ asset('/uploads/testimonial/' . $testimonial->photo) }}"
+                                                    alt="Client Name">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="n23-service-detail-testimonial-content">
+
+                                        <p class="n23-service-detail-testimonial-description">
+
+                                            {{ Str::limit(strip_tags($testimonial->description), 100) }}
+
+                                        </p>
+
+
+                                        <div class="n23-service-detail-testimonial-client">
+
+                                            <h3>
+                                                {{ $testimonial->name }}
+                                            </h3>
+
+                                            <span>
+                                                {{ $testimonial->designation }}
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                         @endforeach
-
                     </div>
 
-
-                    {{-- NEXT --}}
-                    @if ($Services->hasMorePages())
-                        <a href="{{ $Services->nextPageUrl() }}" class="jme-pagination-control jme-pagination-next">
-
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14"></path>
-                                <path d="M13 6l6 6-6 6"></path>
-                            </svg>
-
-                        </a>
-                    @else
-                        <button type="button" class="jme-pagination-control jme-pagination-next" disabled>
-
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 12h14"></path>
-                                <path d="M13 6l6 6-6 6"></path>
-                            </svg>
-
-                        </button>
-                    @endif
+                    <div class="swiper-pagination n23-service-detail-testimonial-pagination"></div>
 
                 </div>
 
             </div>
 
-        @endif
+        </section>
+    @endif
+    <!-- =========================================
+                                                                                                                                                         N23 SERVICE DETAIL - FINAL CTA
+                                                                                                                                                    ========================================= -->
 
-    </main>
+    <section class="n23-service-detail-final-cta">
 
+        <!-- Background Image -->
+        <div class="n23-service-detail-final-cta-bg"></div>
+
+
+        <!-- Decorative Circle -->
+        <div class="n23-service-detail-final-cta-decoration"></div>
+
+
+        <div class="container">
+
+            <div class="n23-service-detail-final-cta-wrapper">
+
+
+                <!-- =================================
+                                                                                                                                                                     CONTENT
+                                                                                                                                                                ================================= -->
+
+                <div class="n23-service-detail-final-cta-content" data-aos="fade-right" data-aos-duration="1000">
+
+                    <h2>
+                        READY FOR YOUR
+                        <br>
+                        NEXT
+                        <strong>JOURNEY?</strong>
+                    </h2>
+
+
+                    <p>
+                        Let N23 make your travel planning simple
+                        and seamless.
+                    </p>
+
+
+                    <a href="{{ route('contactus') }}" class="n23-service-detail-final-cta-button">
+
+                        <span>
+                            Talk To N23
+                        </span>
+
+                        <span class="n23-service-detail-final-cta-arrow">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- =================================
+                                                                                                                                                                     VISUAL
+                                                                                                                                                                ================================= -->
+
+                <div class="n23-service-detail-final-cta-visual" data-aos="fade-left" data-aos-duration="1100">
+
+                    <div class="n23-service-detail-final-cta-image">
+
+                        <img src="{{ asset('front/images/about/about-3.jpg') }}" alt="Travel Journey">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================================
+                                                                                                                                                            N23 LATEST BLOG SECTION
+                                                                                                                                                        ========================================================== -->
+    @if ($blogs->isNotEmpty())
+        <section class="n23-blog section-space">
+
+            <div class="container">
+
+                <!-- ==========================================
+                                                                                                                                                                 SECTION HEADING
+                                                                                                                                                            =========================================== -->
+                <div class="n23-blog-heading text-center" data-aos="fade-up">
+
+                    <span class="n23-blog-kicker">
+                        Related Blogs
+                    </span>
+
+                    <h2 class="n23-blog-title">
+                        Explore More Travel
+                        <span> Insights</span>
+                    </h2>
+
+                </div>
+
+
+
+                <div class="row g-4">
+
+                    @foreach ($blogs as $blog)
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+
+                            <article class="n23-blog-card">
+
+                                <div class="n23-blog-thumb">
+
+                                    <img src="{{ asset('blogs/' . $blog->image) }}"
+                                        alt="How to plan an international trip">
+
+                                    <div class="n23-blog-date">
+                                        <span>25</span>
+                                        Sep
+                                    </div>
+
+                                </div>
+
+                                <div class="n23-blog-content">
+
+                                    <h3>
+                                        <a href="{{ route('blogdetail', $blog->slugname) }}">
+                                            {{ $blog->name }}
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        {{ Str::limit(strip_tags($blog->description), 100) }}
+                                    </p>
+
+                                    <a href="{{ route('blogdetail', $blog->slugname) }}" class="n23-blog-btn">
+                                        <span>Read More</span>
+                                        <i class="bi bi-arrow-up-right"></i>
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+                    @endforeach
+
+                </div>
+
+            </div>
+
+        </section>
+    @endif
 
 @endsection
 @section('scripts')

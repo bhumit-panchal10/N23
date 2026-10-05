@@ -56,7 +56,7 @@
              <!-- =========================================
                  LOGO
             ========================================== -->
-             <a href="#" class="n23-header-logo" aria-label="N23 Travel Service">
+             <a href="{{ route('index') }}" class="n23-header-logo" aria-label="N23 Travel Service">
                  <span class="n23-logo-crop">
                      <img src="{{ asset('front/images/logo.png') }}" alt="N23 Travel Service">
                  </span>
@@ -83,7 +83,7 @@
                     ================================== -->
                      <li class="n23-nav-item n23-service-dropdown">
                          <button type="button"
-                             class="n23-nav-link n23-service-trigger {{ request()->routeIs('service.details') ? 'active' : '' }}"
+                             class="n23-nav-link n23-service-trigger {{ request()->routeIs('service') ? 'active' : '' }}"
                              aria-expanded="false">
                              <span>Services</span>
                              <i class="bi bi-chevron-down"></i>
@@ -130,7 +130,7 @@
 
                                          <div class="n23-dropdown-name">
 
-                                             <a href="{{ route('service.details', $service->slugname) }}">
+                                             <a href="{{ route('service', $service->slugname) }}">
                                                  {{ $service->name ?? '' }}
                                              </a>
 

@@ -1461,13 +1461,13 @@ img {
     }
 
     .n23-logo-crop {
-        width: 80px;
-        height: 54px;
+        width: 130px;
+        height: 100px;
     }
 
     .n23-header-logo img {
         height:
-            54px;
+            100px;
     }
 
     .n23-mobile-toggle {
@@ -3898,7 +3898,7 @@ img {
     }
 
     .n23-blog-thumb {
-        height: 300px;
+        height: auto;
     }
 
     .n23-blog-content h3 {
@@ -4881,6 +4881,43 @@ img {
     font-weight: 600;
 }
 
+@media (max-width:480px) {
+    .n23-breadcrumb {
+    position: relative;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        url("../images/breadcrumb.jpg") center center / cover no-repeat;
+}
+
+.n23-breadcrumb h1 {
+    margin: 0;
+    color:
+        #ffffff;
+    font-family:
+        var(--n23-font-secondary);
+    font-size:30px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing:
+        0.04em;
+    text-transform:
+        uppercase;
+}
+
+.n23-breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 7px;
+    font-family:
+        var(--n23-font-primary);
+    font-size: 14px;
+}
+}
+
 /* =====================================================
    N23 CONTACT INFO SECTION
 ===================================================== */
@@ -5234,6 +5271,17 @@ img {
     .n23-contact-info-card {
         padding: 25px;
     }
+
+    .n23-map-frame {
+    height: 100%;
+    min-height: 250px;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid var(--n23-primary-soft);
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, .18);
+}
 }
 
 /* =====================================================
@@ -6564,6 +6612,63 @@ img {
 
 }
 
+@media (max-width:480px) {
+    .n23-vm-wrapper {
+
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: 30px;
+
+    position: relative;
+}
+
+
+.n23-vm-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fcad17;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+.n23-vm-card {
+
+    position: relative;
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+
+        0 25px 70px rgba(0, 0, 0, .08);
+
+    transition: .45s ease;
+
+    overflow: hidden;
+
+}
+
+}
+
 
 .n23-founder-section {
 
@@ -7329,6 +7434,2829 @@ img {
         animation: none !important;
 
         opacity: 1;
+
+    }
+
+}
+
+
+/* service detail */
+/* =========================================
+   N23 SERVICE INTRO
+========================================= */
+
+.n23-service-intro {
+
+    position: relative;
+
+    padding: 60px 0;
+
+    background: #fffaf2;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   WRAPPER
+========================================= */
+
+.n23-service-intro-wrapper {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.n23-service-intro-image {
+
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* Main image */
+
+.n23-service-intro-image-shape {
+
+    width: 88%;
+
+    height: 420px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    clip-path: polygon(
+        0% 0%,
+        82% 0%,
+        100% 18%,
+        100% 82%,
+        100% 100%,
+        15% 100%,
+        0% 82%,
+        0% 18%
+    );
+
+    background: #f2a000;
+
+}
+
+
+/* Image */
+
+.n23-service-intro-image-shape img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* Image hover */
+
+@media (hover: hover) {
+
+    .n23-service-intro-image:hover
+    .n23-service-intro-image-shape img {
+
+        transform: scale(1.06);
+
+    }
+
+}
+
+
+/* =========================================
+   ORANGE ACCENT
+========================================= */
+
+.n23-service-intro-image-accent {
+
+    position: absolute;
+
+    width: 115px;
+
+    height: 115px;
+
+    background: #e99a00;
+
+    right: 1%;
+
+    top: 4%;
+
+    z-index: -1;
+
+    clip-path: polygon(
+        20% 0%,
+        100% 0%,
+        100% 80%,
+        80% 100%,
+        0% 100%,
+        0% 20%
+    );
+
+    animation:
+        n23ServiceAccentFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes n23ServiceAccentFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(12px);
+
+    }
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.n23-service-intro-content {
+
+    padding-right: 30px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.n23-service-intro-content h1 {
+
+    margin: 0;
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(55px, 6vw, 58px);
+
+    line-height: .88;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+.n23-service-intro-content h1 strong {
+
+    display: block;
+
+    color: #e99a00;
+
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.n23-service-intro-line {
+
+    width: 80px;
+
+    height: 4px;
+
+    margin: 15px 0;
+
+    background: var(--n23-primary-hover);
+
+    transform-origin: left;
+
+    animation:
+        n23ServiceIntroLine 2.5s
+        ease-in-out infinite alternate;
+
+}
+
+
+@keyframes n23ServiceIntroLine {
+
+    from {
+
+        width: 60px;
+
+    }
+
+    to {
+
+        width: 110px;
+
+    }
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.n23-service-intro-content p {
+
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =========================================
+   SUBTLE BACKGROUND DETAIL
+========================================= */
+
+.n23-service-intro::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    right: -140px;
+
+    bottom: -140px;
+
+    border: 1px solid rgba(233,154,0,.15);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .n23-service-intro-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+    .n23-service-intro-image {
+
+        min-height: 380px;
+
+    }
+
+    .n23-service-intro-image-shape {
+
+        width: 90%;
+
+        height: 380px;
+
+    }
+
+    .n23-service-intro-content {
+
+        padding-right: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .n23-service-intro {
+
+        padding: 60px 0;
+
+    }
+
+    .n23-service-intro-wrapper {
+
+        gap: 35px;
+
+    }
+
+    .n23-service-intro-image {
+
+        min-height: 290px;
+
+    }
+
+    .n23-service-intro-image-shape {
+
+        width: 92%;
+
+        height: 290px;
+
+    }
+
+    .n23-service-intro-image-accent {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+    .n23-service-intro-content h1 {
+
+        font-size: 52px;
+
+    }
+
+    .n23-service-intro-content p {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
+    }
+
+}
+
+
+/* =========================================
+   N23 SERVICE CTA
+========================================= */
+
+.n23-service-cta {
+
+    position: relative;
+
+    margin: 0;
+
+    padding: 40px 0;
+
+    background: #e99a00;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.n23-service-cta-bg {
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 58%;
+    height: 100%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #e99a00 0%,
+            rgba(233, 154, 0, .98) 18%,
+            rgba(233, 154, 0, .78) 48%,
+            rgba(233, 154, 0, .52) 75%,
+            rgba(233, 154, 0, .35) 100%
+        ),
+        url("../images/service-cta.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    opacity: .95;
+
+}
+
+
+/* Orange image glow */
+
+.n23-service-cta-bg::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(233, 154, 0, .20),
+            rgba(233, 154, 0, .08)
+        );
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.n23-service-cta-wrapper {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+.n23-service-cta-content {
+
+    width: 58%;
+
+    max-width: 720px;
+
+}
+
+
+.n23-service-cta-label {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #e99a00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.n23-service-cta-content h2 {
+
+    margin: 0;
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(55px, 6vw, 62px);
+
+    line-height: .88;
+
+    text-transform: uppercase;
+
+    color: #fff;
+
+}
+
+
+.n23-service-cta-content h2 strong {
+
+    display: block;
+
+    color: var(--n23-white);
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.n23-service-cta-content p {
+
+    max-width: 570px;
+
+    margin: 25px 0 30px;
+
+    color: rgba(255,255,255,.70);
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   N23 CREATIVE CTA BUTTON
+========================================= */
+
+.n23-service-cta-button {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0;
+
+    min-width: 190px;
+
+    height: 58px;
+
+    padding: 0;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, .8);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .16);
+
+    transition:
+        transform .45s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .45s ease;
+
+}
+
+
+/* Orange animated layer */
+
+.n23-service-cta-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -30%;
+
+    top: 0;
+
+    width: 55%;
+
+    height: 100%;
+
+    background: #e99a00;
+
+    transform: skewX(-25deg);
+
+    transition:
+        left .55s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+/* Text */
+
+.n23-service-cta-button > span:first-child {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    padding: 0 26px;
+
+    white-space: nowrap;
+
+    transition:
+        color .35s ease;
+
+}
+
+
+/* Arrow box */
+
+.n23-service-cta-arrow {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #111111;
+
+    color: #e99a00;
+
+    font-size: 18px;
+
+    transition:
+        background .45s ease,
+        color .45s ease,
+        transform .45s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.n23-service-cta-button:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, .24);
+
+}
+
+
+.n23-service-cta-button:hover::before {
+
+    left: 45%;
+
+}
+
+
+.n23-service-cta-button:hover
+.n23-service-cta-arrow {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    transform: rotate(45deg);
+
+}
+
+
+.n23-service-cta-button:hover
+.n23-service-cta-button > span:first-child {
+
+    color: #111111;
+
+}
+
+
+/* =========================================
+   ARROW ICON
+========================================= */
+
+.n23-service-cta-arrow i {
+
+    display: block;
+
+    transition:
+        transform .45s ease;
+
+}
+
+
+.n23-service-cta-button:hover
+.n23-service-cta-arrow i {
+
+    transform: rotate(-45deg);
+
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .n23-service-cta {
+
+        padding: 65px 0;
+
+    }
+
+    .n23-service-cta-bg {
+
+        width: 100%;
+
+        opacity: .35;
+
+    }
+
+    .n23-service-cta-content {
+
+        width: 100%;
+
+        max-width: 650px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .n23-service-cta {
+
+        padding: 55px 0;
+
+    }
+
+    .n23-service-cta-content h2 {
+
+        font-size: 52px;
+
+    }
+
+    .n23-service-cta-content p {
+
+        font-size: 14px;
+
+    }
+
+    .n23-service-cta-route {
+
+        width: 90%;
+
+    }
+
+}
+
+
+/* =========================================
+   N23 SERVICE FAQ
+========================================= */
+
+.n23-service-faq {
+
+    position: relative;
+
+    padding: 60px 0;
+
+    background: #fffaf2;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   MAIN WRAPPER
+========================================= */
+
+.n23-service-faq-wrapper {
+
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    align-items: start;
+
+    gap: 70px;
+
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.n23-service-faq-left {
+
+    padding-top: 8px;
+
+}
+
+
+.n23-service-faq-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--n23-primary-hover);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.n23-service-faq-left h2 {
+
+    margin: 0;
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(48px, 5vw, 68px);
+
+    line-height: .88;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+.n23-service-faq-left h2 strong {
+
+    color: var(--n23-primary-hover);
+
+}
+
+
+/* =========================================
+   ORANGE LINE
+========================================= */
+
+.n23-service-faq-line {
+
+    width: 58px;
+
+    height: 4px;
+
+    background: var(--n23-primary-hover);
+
+    margin: 22px 0 28px;
+
+    transform-origin: left;
+
+    animation:
+        n23FaqLine 2.5s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes n23FaqLine {
+
+    from {
+
+        width: 45px;
+
+    }
+
+    to {
+
+        width: 85px;
+
+    }
+
+}
+
+
+/* =========================================
+   FAQ IMAGE
+========================================= */
+
+.n23-service-faq-image {
+
+    width: 100%;
+
+    max-width: 330px;
+
+    height: 210px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    position: relative;
+
+}
+
+
+.n23-service-faq-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(233, 154, 0, .08),
+            transparent 60%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.n23-service-faq-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s
+        cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+.n23-service-faq-image:hover img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.n23-service-faq-right {
+
+    width: 100%;
+
+    padding-top: 8px;
+
+}
+
+
+/* =========================================
+   FAQ ITEM
+========================================= */
+
+.n23-faq-item {
+
+    border-bottom:
+        1px solid rgba(17, 17, 17, .10);
+
+}
+
+
+.n23-faq-item:first-child {
+
+    border-top:
+        1px solid rgba(17, 17, 17, .10);
+
+}
+
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.n23-faq-question {
+
+    width: 100%;
+
+    min-height: 64px;
+
+    padding: 18px 0;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family:
+        var(--n23-font-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #222;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.n23-faq-question:hover {
+
+    color: var(--n23-primary-hover);
+
+}
+
+
+/* =========================================
+   TOGGLE
+========================================= */
+
+.n23-faq-toggle {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #111;
+
+    border:
+        1px solid rgba(17, 17, 17, .16);
+
+    border-radius: 50%;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        transform .35s ease;
+
+}
+
+
+.n23-faq-toggle i {
+
+    font-size: 13px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================
+   ACTIVE TOGGLE
+========================================= */
+
+.n23-faq-item.active
+.n23-faq-toggle {
+
+    background: var(--n23-primary-hover);
+
+    color: #fff;
+
+    border-color: var(--n23-primary-hover);
+
+}
+
+
+/* =========================================
+   ANSWER
+========================================= */
+
+.n23-faq-answer {
+
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition:
+        grid-template-rows .45s
+        cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+.n23-faq-answer > div {
+
+    overflow: hidden;
+
+}
+
+
+.n23-faq-answer p {
+
+    margin: 0;
+
+    padding:
+        0 55px 22px 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   OPEN ANSWER
+========================================= */
+
+.n23-faq-item.active
+.n23-faq-answer {
+
+    grid-template-rows: 1fr;
+
+}
+
+
+/* =========================================
+   ACTIVE QUESTION
+========================================= */
+
+.n23-faq-item.active
+.n23-faq-question {
+
+    color: var(--n23-primary-hover);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .n23-service-faq {
+
+        padding: 70px 0;
+
+    }
+
+
+    .n23-service-faq-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .n23-service-faq-left {
+
+        text-align: center;
+
+    }
+
+
+    .n23-service-faq-line {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .n23-service-faq-image {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .n23-service-faq-left h2 {
+
+        font-size: 58px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .n23-service-faq {
+
+        padding: 60px 0;
+
+    }
+
+
+    .n23-service-faq-wrapper {
+
+        gap: 35px;
+
+    }
+
+
+    .n23-service-faq-left h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .n23-faq-question {
+
+        min-height: 60px;
+
+        font-size: 13px;
+
+        gap: 15px;
+
+    }
+
+
+    .n23-faq-answer p {
+
+        padding-right: 10px;
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   N23 SERVICE DETAIL DESCRIPTION
+========================================= */
+
+.n23-service-description {
+
+    position: relative;
+
+    padding: 60px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   CONTENT WRAPPER
+========================================= */
+
+/* .n23-service-description-inner {
+
+    max-width: 980px;
+
+    margin: 0 auto;
+
+} */
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.n23-service-description-content {
+
+    position: relative;
+
+    padding-left: 25px;
+
+}
+
+/* =========================================
+   H2
+========================================= */
+
+.n23-service-description-content h2 {
+
+    margin: 0 0 25px;
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(38px, 4vw, 58px);
+
+    line-height: .95;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+/* =========================================
+   H3
+========================================= */
+
+.n23-service-description-content h3 {
+
+    position: relative;
+
+    margin: 48px 0 18px;
+
+    /* padding-left: 18px; */
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(26px, 2.5vw, 36px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+.n23-service-description-content p {
+
+    margin: 0 0 10px;
+
+    max-width: 900px;
+
+    color: #666;
+
+    font-family:
+        var(--n23-font-primary);
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.n23-service-description-content ul {
+
+    margin: 28px 0 35px;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+/* =========================================
+   LIST ITEM
+========================================= */
+
+.n23-service-description-content ul li {
+
+    position: relative;
+
+    padding: 13px 20px 13px 38px;
+
+    margin-bottom: 8px;
+
+    color: #444;
+
+    font-family:
+        var(--n23-font-primary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    background: #fffaf2;
+
+    border-left: 2px solid transparent;
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+
+/* =========================================
+   LIST DOT
+========================================= */
+
+.n23-service-description-content ul li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 17px;
+
+    top: 21px;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--n23-primary-hover);
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================================
+   LIST HOVER
+========================================= */
+
+.n23-service-description-content ul li:hover {
+
+    border-left-color: var(--n23-primary-hover);
+
+    background: #fff7e8;
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   LAST PARAGRAPH
+========================================= */
+
+.n23-service-description-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .n23-service-description {
+
+        padding: 55px 0;
+
+    }
+
+
+    .n23-service-description-content {
+
+        padding-left: 30px;
+
+    }
+
+
+    .n23-service-description-content::before {
+
+        width: 3px;
+
+        height: 55px;
+
+    }
+
+
+    .n23-service-description-content h2 {
+
+        font-size: 40px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .n23-service-description-content h3 {
+
+        margin-top: 38px;
+
+        font-size: 28px;
+
+    }
+
+
+    .n23-service-description-content p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .n23-service-description-content ul li {
+
+        font-size: 13px;
+
+        padding-left: 32px;
+
+    }
+
+
+    .n23-service-description-content ul li::before {
+
+        left: 13px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .n23-service-description {
+
+        padding: 45px 0;
+
+    }
+
+
+    .n23-service-description-content {
+
+        padding-left: 22px;
+
+    }
+
+
+    .n23-service-description-content h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .n23-service-description-content h3 {
+
+        font-size: 25px;
+
+    }
+
+}
+
+/* =========================================
+   N23 SERVICE DETAIL TESTIMONIAL
+========================================= */
+
+.n23-service-detail-testimonial {
+
+    position: relative;
+
+    padding: 60px 0 60px;
+
+    background: #fffaf2;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.n23-service-detail-testimonial-heading {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.n23-service-detail-testimonial-label {
+
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: var(--n23-primary-hover);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.n23-service-detail-testimonial-heading h2 {
+
+    margin: 0;
+
+    font-family: var(--n23-font-secondary);
+
+    font-size: clamp(45px, 5vw, 68px);
+
+    line-height: .9;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+.n23-service-detail-testimonial-heading h2 strong {
+
+    color: var(--n23-primary-hover);
+
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.n23-service-detail-testimonial-slider {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 10px 5px 55px;
+
+}
+
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.n23-service-detail-testimonial-slider
+.swiper-slide {
+
+    height: auto;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.n23-service-detail-testimonial-card {
+
+    position: relative;
+
+    height: 100%;
+
+    min-height: 450px;
+
+    padding: 45px 35px 35px;
+
+    background: #fff;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 55px rgba(17, 17, 17, .07);
+
+    overflow: hidden;
+
+    transition:
+        transform .5s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .5s ease;
+
+}
+
+
+.n23-service-detail-testimonial-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(17, 17, 17, .12);
+
+}
+
+
+/* =========================================
+   TOP LINE
+========================================= */
+
+.n23-service-detail-testimonial-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--n23-primary-hover),
+            #f6bd4a
+        );
+
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.n23-service-detail-testimonial-quote {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    color: var(--n23-primary-hover);
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    opacity: .12;
+
+}
+
+
+.n23-service-detail-testimonial-quote i {
+
+    line-height: 1;
+
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.n23-service-detail-testimonial-profile {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   IMAGE RING
+========================================= */
+
+.n23-service-detail-testimonial-image-ring {
+
+    position: relative;
+
+    width: 145px;
+
+    height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(233, 154, 0, .45);
+
+    border-radius: 50%;
+
+}
+
+
+.n23-service-detail-testimonial-image-ring::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px dashed rgba(233, 154, 0, .5);
+
+    border-radius: 50%;
+
+    animation:
+        n23ServiceTestimonialRotate
+        16s linear infinite;
+
+}
+
+
+@keyframes n23ServiceTestimonialRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   DOT
+========================================= */
+
+.n23-service-detail-testimonial-image-ring::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    right: 14px;
+
+    top: 18px;
+
+    background: var(--n23-primary-hover);
+
+    border: 3px solid #fff;
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.n23-service-detail-testimonial-image {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 112px;
+
+    height: 112px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 5px solid #fff;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .12);
+
+}
+
+
+.n23-service-detail-testimonial-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+.n23-service-detail-testimonial-card:hover
+.n23-service-detail-testimonial-image img {
+
+    transform: scale(1.08);
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.n23-service-detail-testimonial-content {
+
+    text-align: center;
+
+}
+
+
+
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.n23-service-detail-testimonial-description {
+
+    margin: 0 auto 15px;
+
+    color: #666;
+
+    font-family: var(--n23-font-primary);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+    height: 150px;
+
+}
+
+
+/* =========================================
+   CLIENT
+========================================= */
+
+.n23-service-detail-testimonial-client h3 {
+
+    margin: 0 0 0px;
+
+    font-family: var(--n23-font-secondary);
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: #111;
+
+}
+
+
+.n23-service-detail-testimonial-client span {
+
+    color: var(--n23-primary-hover);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.n23-service-detail-testimonial-pagination {
+
+    bottom: 0 !important;
+
+}
+
+
+.n23-service-detail-testimonial-pagination
+.swiper-pagination-bullet {
+
+    width: 7px;
+
+    height: 7px;
+
+    margin: 0 5px !important;
+
+    background: #111;
+
+    opacity: .2;
+
+    transition:
+        width .35s ease,
+        opacity .35s ease,
+        background .35s ease;
+
+}
+
+
+.n23-service-detail-testimonial-pagination
+.swiper-pagination-bullet-active {
+
+    width: 25px;
+
+    border-radius: 10px;
+
+    background: var(--n23-primary-hover);
+
+    opacity: 1;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .n23-service-detail-testimonial {
+
+        padding: 70px 0 90px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .n23-service-detail-testimonial {
+
+        padding: 60px 0 80px;
+
+    }
+
+    .n23-service-detail-testimonial-heading {
+
+        margin-bottom: 40px;
+
+    }
+
+    .n23-service-detail-testimonial-card {
+
+        min-height: 430px;
+
+        padding: 40px 25px 30px;
+
+    }
+
+    .n23-service-detail-testimonial-description {
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .n23-service-detail-testimonial-heading h2 {
+
+        font-size: 42px;
+
+    }
+
+    .n23-service-detail-testimonial-card {
+
+        border-radius: 22px;
+
+    }
+
+}
+
+
+/* =========================================
+   N23 SERVICE DETAIL - FINAL CTA
+========================================= */
+
+.n23-service-detail-final-cta {
+
+    position: relative;
+
+    /* min-height: 400px; */
+
+    padding: 60px 0;
+
+    background: #101010;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.n23-service-detail-final-cta-bg {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 58%;
+
+    height: 100%;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            #101010 0%,
+            rgba(16,16,16,.96) 12%,
+            rgba(16,16,16,.65) 42%,
+            rgba(16,16,16,.15) 100%
+        ),
+
+        url("../images/about/about-1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    opacity: .95;
+
+}
+
+
+/* =========================================
+   ORANGE GLOW
+========================================= */
+
+.n23-service-detail-final-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    /* width: 500px; */
+
+    /* height: 500px; */
+
+    right: 12%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(233,154,0,.16) 0%,
+            rgba(233,154,0,.05) 35%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+}
+
+
+
+
+/* =========================================
+   MAIN WRAPPER
+========================================= */
+
+.n23-service-detail-final-cta-wrapper {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns: 52% 48%;
+
+    align-items: center;
+
+    /* min-height: 430px; */
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.n23-service-detail-final-cta-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-right: 40px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.n23-service-detail-final-cta-content h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        var(--n23-font-secondary);
+
+    font-size:
+        clamp(48px, 5vw, 72px);
+
+    font-weight: 700;
+
+    line-height: .88;
+
+    text-transform: uppercase;
+
+}
+
+
+.n23-service-detail-final-cta-content h2 strong {
+
+    color: #e99a00;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   SHORT DESCRIPTION
+========================================= */
+
+.n23-service-detail-final-cta-content p {
+
+    margin: 25px 0 30px;
+
+    max-width: 470px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-family:
+        var(--n23-font-primary);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.n23-service-detail-final-cta-button {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    background: #e99a00;
+
+    color: #111;
+
+    font-family:
+        var(--n23-font-primary);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+/* Button hover layer */
+
+.n23-service-detail-final-cta-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #ffffff;
+
+    transform:
+        translateX(-101%);
+
+    transition:
+        transform .45s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.n23-service-detail-final-cta-button > span:first-child {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        16px 28px;
+
+}
+
+
+.n23-service-detail-final-cta-arrow {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #111;
+
+    transition:
+        background .4s ease,
+        color .4s ease;
+
+}
+
+
+.n23-service-detail-final-cta-arrow i {
+
+    font-size: 16px;
+
+    transition:
+        transform .4s ease;
+
+}
+
+
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
+.n23-service-detail-final-cta-button:hover {
+
+    color: #111;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(233,154,0,.22);
+
+}
+
+
+.n23-service-detail-final-cta-button:hover::before {
+
+    transform:
+        translateX(0);
+
+}
+
+
+.n23-service-detail-final-cta-button:hover
+.n23-service-detail-final-cta-arrow {
+
+    background: #111;
+
+    color: #e99a00;
+
+}
+
+
+.n23-service-detail-final-cta-button:hover
+.n23-service-detail-final-cta-arrow i {
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* =========================================
+   RIGHT IMAGE
+========================================= */
+
+.n23-service-detail-final-cta-visual {
+
+    position: relative;
+
+    height: 390px;
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.n23-service-detail-final-cta-image {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    width: 410px;
+
+    height: 350px;
+
+    transform:
+        translateY(-50%);
+
+    overflow: hidden;
+
+    border-radius:
+        0 90px 0 90px;
+
+    border:
+        1px solid
+        rgba(233,154,0,.35);
+
+}
+
+
+/* Image overlay */
+
+.n23-service-detail-final-cta-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(233,154,0,.18),
+            transparent 55%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.n23-service-detail-final-cta-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s
+        cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.n23-service-detail-final-cta-visual:hover
+.n23-service-detail-final-cta-image img {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+/* =========================================
+   IMAGE FRAME
+========================================= */
+
+.n23-service-detail-final-cta-visual::before {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 28px;
+
+    width: 410px;
+
+    height: 350px;
+
+    border:
+        1px solid
+        rgba(233,154,0,.30);
+
+    border-radius:
+        0 90px 0 90px;
+
+    transform:
+        translate(12px, 12px);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .n23-service-detail-final-cta {
+
+        padding: 70px 0;
+
+    }
+
+
+    .n23-service-detail-final-cta-bg {
+
+        width: 100%;
+
+        opacity: 1;
+
+        /* background-image:
+
+            linear-gradient(
+                90deg,
+                #101010,
+                #101010
+            ),
+
+            url("../images/about/about-1.jpg"); */
+
+    }
+
+
+    .n23-service-detail-final-cta-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .n23-service-detail-final-cta-content {
+
+        padding-right: 0;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual {
+
+        height: 340px;
+
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+    }
+
+
+    .n23-service-detail-final-cta-image {
+
+        width: 400px;
+
+        height: 320px;
+
+        right: 30px;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual::before {
+
+        width: 400px;
+
+        height: 320px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .n23-service-detail-final-cta {
+
+        min-height: auto;
+
+        padding: 60px 0;
+
+    }
+
+
+    .n23-service-detail-final-cta-content h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .n23-service-detail-final-cta-content p {
+
+        font-size: 13px;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual {
+
+        height: 290px;
+
+    }
+
+
+    .n23-service-detail-final-cta-image {
+
+        width:
+            calc(100% - 35px);
+
+        height: 270px;
+
+        right: 0;
+
+        border-radius:
+            0 60px 0 60px;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual::before {
+
+        width:
+            calc(100% - 35px);
+
+        height: 270px;
+
+        border-radius:
+            0 60px 0 60px;
+
+        transform:
+            translate(10px, 10px);
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .n23-service-detail-final-cta-content h2 {
+
+        font-size: 40px;
+
+    }
+
+
+    .n23-service-detail-final-cta-content p {
+
+        margin-top: 20px;
+
+    }
+
+
+    .n23-service-detail-final-cta-button > span:first-child {
+
+        padding:
+            14px 22px;
+
+    }
+
+
+    .n23-service-detail-final-cta-arrow {
+
+        width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual {
+
+        height: 250px;
+
+    }
+
+
+    .n23-service-detail-final-cta-image {
+
+        height: 235px;
+
+    }
+
+
+    .n23-service-detail-final-cta-visual::before {
+
+        height: 235px;
 
     }
 

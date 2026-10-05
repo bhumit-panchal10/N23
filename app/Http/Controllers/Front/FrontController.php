@@ -130,24 +130,34 @@ class FrontController extends Controller
 
     public function service(Request $request, $slugname = null)
     {
-        try {
-            $meta = Category::where('slugname', $slugname)->first();
-            if ($slugname) {
-                $Category = Category::where('slugname', $slugname)->first();
-                $Services = Service::where('category_id', $Category->id)->paginate();
-            } else {
-                $Services = Service::paginate();
-            }
-            return view('frontview.service', compact('Services', 'Category', 'meta'));
-        } catch (\Throwable $th) {
-            Log::error('Contact Page Load Error: ' . $th->getMessage(), [
-                'exception' => $th
-            ]);
+        // try {
+        // $meta = Category::where('slugname', $slugname)->first();
+        if ($slugname) {
+            $Services = Service::where('slugname', $slugname)->first();
 
-            return redirect()->back()
-                ->withInput()
-                ->with('error', 'Failed to load contact page. Please try again.');
+            if ($Services) {
+                $blogs = Blog::where('service_id', $Services->id)
+                    ->paginate();
+                $faqs = Faq::where('service_id', $Services->id)->get();
+                $testimonials = Testimonial::where('service_id', $Services->id)->get();
+            } else {
+                $blogs = collect();
+                $faqs = collect();
+                $testimonials = collect();
+            }
+        } else {
+            $Services = Service::paginate();
         }
+        return view('frontview.service', compact('Services', 'blogs', 'faqs', 'testimonials'));
+        // } catch (\Throwable $th) {
+        //     Log::error('Contact Page Load Error: ' . $th->getMessage(), [
+        //         'exception' => $th
+        //     ]);
+
+        //     return redirect()->back()
+        //         ->withInput()
+        //         ->with('error', 'Failed to load contact page. Please try again.');
+        // }
     }
 
     public function servicedetail(Request $request, $slugname = null)
